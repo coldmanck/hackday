@@ -1,0 +1,56 @@
+#white_board_1, #white_board_2{
+    background-color: rgb(245, 237, 255);
+    width: 90%;
+    height: 90%;
+    z-index: 2001;
+    border: 1px solid green;
+    left: 2%;
+    top: 2%;
+    padding: 10px 10px 10px 10px;
+    opacity: 0;
+    border-radius: 12px;
+}
+#trans_board{
+    background-color: gray;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    opacity: 0.15;
+}
+.wb_panel_div{
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+    background-color: #F6CBCB;
+    border-radius: 10px;
+}
+.wb_panel_div_text{
+    color: rgb(0, 111, 155);
+    font-size: 150%;
+}
+#google_map_restaurant{width: 550px; height: 430px;}
+.map_info_window {color: green;}
+.pic {width: 100%; height: 100%;}
+.container {margin: 0px auto; top: 10px;}
+.choose_food_th_class {font-size: 20px; align: center;}
+.right_table_food_td_style{padding: 5px 15px 5px 5px;}
+#select_food_info_div, #restaurant_info_div{
+    padding: 20px 10px 20px 10px;
+    background-color: rgb(209, 235, 255);
+    border-radius: 10px;
+}
+#restaurant_info_div{
+    margin-left: 10px;
+}
+.text{
+    font-size: 18px;
+    border-radius: 5px;
+}
+.biao_kai{font-family: '標楷體';}
+.brand_icon{padding: 5px 0 5px 0;}
+.col-md-5{top: 100px}
+.whitebaord_div{
+    margin: 5px 0 5px 0;
+}
+#healty_food_table{
+    border: 2px solid green;
+}

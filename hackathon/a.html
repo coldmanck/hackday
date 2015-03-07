@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <title>haha</title>
+    <meta charset="utf-8">
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://www.google.com/jsapi"></script>
+    <style type="text/css"> 
+	  #google-map{
+	  	width: 400px;
+	  	height: 300px;
+	  };
+	</style> 
+  </head>
+  <body>
+  	<div id="location-logs"></div>
+  	<div id="google-map"></div>
+  </body>
+</html>
+<script>
+$(document).ready(function(){
+
+var google_map = 0;
+if(google_map == 0){
+	google_map = new google.maps.Map(document.getElementById('google-map'), {
+      zoom: 15,
+      center: new google.maps.LatLng(35.6654816, 139.7307837),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      panControl: false,
+      streetViewControl: false,
+      mapTypeControl: false
+  	});
+}
+
+var add_location_log = function(lat, lng, date){
+  var div = $('<div>' + date.toString() + ' at ' + '</div>');
+  var marker = new google.maps.Marker({
+    map: null,
+    position: new google.maps.LatLng(lat, lng)
+  });
+  marker.setMap(google_map);
+  marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+  div.hover(function(){
+  	marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
+  }, function(){
+  	marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+  });
+  google.maps.event.addListener(marker, 'mouseover', function(){
+  	marker.infowindow = new google.maps.InfoWindow({
+    	content: '<div>' + date.toString() + ' at ' + '</div>'
+  	});
+  });
+  google.maps.event.addListener(marker, 'mouseout', function(){
+  	console.log(123);
+  })
+  $('#location-logs').append(div);
+};
+
+add_location_log(35.6654293, 139.7330153, new Date("2010-08-17 12:09:36"));
+add_location_log(35.6653293, 139.7320153, new Date("2010-08-01 12:09:36"));
+add_location_log(35.6651293, 139.7323153, new Date("2010-08-12 12:09:36"));
+
+});
+</script>
+
+
+
+
+
+
+

@@ -1,9 +1,9 @@
 findme
 =========
-The project of OpenHackDay3. by Team no.64 Hello Taiwan.
+The project of OpenHackDay3. by Team no.64 *Hello Taiwan*.
 
 **Introduce**
-To the families with their elders suffer Alzheirmer's disease, who worry about their lovely elders might get lost on their way home. The system helps us to keep the elders' track under our control.
+- To the families with their elders suffer Alzheirmer's disease, who worry about their lovely elders might get lost on their way home. The system helps us to keep the elders' track under our control.
 
 **Base File Structure**
 - Edison: The code on Intel Edison, include bluetooth code and photo script.

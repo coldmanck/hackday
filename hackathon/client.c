@@ -32,6 +32,8 @@ int main(int argc, char **argv){
             if(status >= 0){
                 printf("connected.\n");
                 send_query(edison_id, target_id, 1);
+                printf("send email.\n");
+                system("sh /home/root/process_capture.sh");
                 break;
             }
             sleep(1);
@@ -42,6 +44,8 @@ int main(int argc, char **argv){
             if(status < 0){
                 printf("disconnected %s.\n", target_id);
                 send_query(edison_id, target_id, 0);
+                printf("send email.\n");
+                system("sh /home/root/process_capture.sh");
                 close(s);
                 break;
             }
@@ -61,7 +65,7 @@ int send_query(char *edison_id, char *target_id, int d_on){
     portno = 80;
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
     if (sockfd < 0) fprintf(stderr, "ERROR opening socket.\n");
-    server = gethostbyname("jp.nagi.tw");
+    server = gethostbyname("210.140.168.112");
     if (server == NULL){fprintf(stderr,"ERROR, no such host\n");}
     
     bzero((char *) &serv_addr, sizeof(serv_addr));
@@ -74,8 +78,8 @@ int send_query(char *edison_id, char *target_id, int d_on){
     colon_to_dash(edison_id, buf2);
     colon_to_dash(target_id, buf3);
     
-    sprintf(buffer, "GET /notify.php?edison_id=%s&target_id=%s&con=%d HTTP/1.0\r\n\r\n", buf2, buf3, d_on);
-
+    sprintf(buffer, "GET /notify.php?edison_id=%s&target_id=%s&con=%d&m=coldmanck HTTP/1.0\r\n\r\n", buf2, buf3, d_on);
+    
     // printf("%s\n", buffer);
     n = write(sockfd, buffer, strlen(buffer));
     if (n < 0) error("ERROR writing to socket");

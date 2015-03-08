@@ -13,5 +13,5 @@ To the families with their elders suffer Alzheirmer's disease, who worry about t
 - Server/Server_original: dump of Server. <20150309>
 
 **Team Member**
-Due, Ku, Dos, Ddrsmile, Sayu, nagi
+- Due, Ku, Dos, Ddrsmile, Sayu, nagi
 

@@ -3,7 +3,7 @@ findme
 The project created by Team no.64, *Hello Taiwan*, at OpenHackDay3 ( http://hackday.jp/open/ ).
 
 
-**Introduce**
+**Introduction**
 - To the families with their elders suffer Alzheirmer's disease, who worry about their lovely elders might get lost on their way home. The system helps us to keep the elders' track under our control.
 
 **Base File Structure**
